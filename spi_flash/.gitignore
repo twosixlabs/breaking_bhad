@@ -1,0 +1,5 @@
+spi
+spi.elf
+spi.map
+*.o
+tags

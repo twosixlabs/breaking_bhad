@@ -1,0 +1,11 @@
+1) Set up your MIPS tools from the Belkin open source software at http://cache-www.belkin.com/support/dl/F7C027-F7C028.tar.
+2) Add the tools to your PATH.
+3) Run 'make'.
+4) Profit. spi.elf is the full elf, spi is the file that you send to to the device with kermit.
+
+The .kermrc is in this directory. You may need to modify the 'set line' device for your system. http://www.denx.de/wiki/view/DULG/SystemSetup
+
+jffs2_mount_mtdram.sh is used to mount the JFFS2 portions of the WeMo switch flash dump so we can modify it. This script copies the original file into RAM, so no changes persist back to the original. You need to create your binary diffs before you rmmod the kernel modules, but you can (and should) unmount the JFFS2 filesystem before you generate your diffs. http://wiki.emacinc.com/wiki/Mounting_JFFS2_Images_on_a_Linux_PC with some mods regarding erase size and the proper compression for JFFS2.
+
+print_file.rb and printer.rb are deprecated, but we used them to do some of our initial memory poking.
+
